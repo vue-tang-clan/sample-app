@@ -1,6 +1,6 @@
 class ExamplePagesController < ApplicationController
   def hello_method
-    render json: {peter: "is a cool guy!"}
+    render json: {peter: "is a cool guy!", time: Time.now.strftime("%b %e, %l:%M %p")}
   end
 
   def test_method
