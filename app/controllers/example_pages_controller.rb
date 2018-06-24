@@ -1,13 +1,17 @@
 class ExamplePagesController < ApplicationController
   def hello_method
-    render json: {peter: "is a cool guy!", time: Time.now.strftime("%b %e, %l:%M %p")}
+    @message = "is a cool guy!!!"
+    @time = Time.now.strftime("%b %e, %l:%M %p")
+    render "hello.json.jbuilder"
   end
 
   def test_method
-    render json: {message: "Yo", numbers: [3, 3, 2, 1]}
+    @my_message = "Yo!!!"
+    @numbers = [3, 3, 2, 1]
+    render "test.json.jbuilder"
   end
 
   def nonjson_method
-    render html: "<h1>Hi</h1>".html_safe
+    render "nonjson.html"
   end
 end
