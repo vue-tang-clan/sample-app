@@ -1,4 +1,6 @@
 class ExamplePagesController < ApplicationController
+  @@page_count = 0
+
   def hello_method
     @message = "is a cool guy!!!"
     @time = Time.now.strftime("%b %e, %l:%M %p")
@@ -27,5 +29,11 @@ class ExamplePagesController < ApplicationController
       @numbers << rand(1..60)
     end
     render "lotto.json.jbuilder"
+  end
+
+  def page_count_method
+    @@page_count += 1
+    @count = @@page_count
+    render "page_count.json.jbuilder"
   end
 end
