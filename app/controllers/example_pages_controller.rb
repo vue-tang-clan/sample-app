@@ -14,4 +14,10 @@ class ExamplePagesController < ApplicationController
   def nonjson_method
     render "nonjson.html"
   end
+
+  def fortune_method
+    fortunes = ["You will be rich", "You will be poor", "You will die in 3 days."]
+    @fortune = fortunes.sample
+    render "fortune.json.jbuilder"
+  end
 end
