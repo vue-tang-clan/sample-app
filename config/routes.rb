@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get "/nonjson_url" => "example_pages#nonjson_method"
 
   get "/fortune_url" => "example_pages#fortune_method"
+  get "/lotto_url" => "example_pages#lotto_method"
 end

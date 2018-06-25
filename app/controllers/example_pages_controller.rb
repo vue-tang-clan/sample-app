@@ -20,4 +20,12 @@ class ExamplePagesController < ApplicationController
     @fortune = fortunes.sample
     render "fortune.json.jbuilder"
   end
+
+  def lotto_method
+    @numbers = []
+    6.times do
+      @numbers << rand(1..60)
+    end
+    render "lotto.json.jbuilder"
+  end
 end
